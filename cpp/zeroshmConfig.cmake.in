@@ -1,0 +1,15 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Find required dependencies
+find_dependency(Threads REQUIRED)
+
+# Include the targets file
+include("${CMAKE_CURRENT_LIST_DIR}/zeroshmTargets.cmake")
+
+# Set up variables for consumers
+set(zeroshm_FOUND TRUE)
+
+check_required_components(zeroshm)
+

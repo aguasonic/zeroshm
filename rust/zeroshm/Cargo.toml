@@ -1,0 +1,23 @@
+[package]
+name = "zeroshm"
+version = "1.0.0"
+edition = "2021"
+description = "Zero-copy shared memory - Rust implementation"
+
+[dependencies]
+libc = "0.2"
+xxhash-rust = { version = "0.8", features = ["xxh3"] }
+thiserror = "1.0"
+
+[[bench]]
+name = "benchmark_queue"
+harness = false
+
+[[bench]]
+name = "benchmark_stack"
+harness = false
+
+[[bench]]
+name = "benchmark_array"
+harness = false
+

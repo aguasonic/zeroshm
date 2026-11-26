@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "zeroshm",
+    "zeroshm-cli",
+    "interop-tests",
+]
+resolver = "2"
+

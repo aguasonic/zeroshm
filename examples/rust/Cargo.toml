@@ -1,0 +1,16 @@
+[package]
+name = "zeroshm-examples"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "producer"
+path = "src/producer.rs"
+
+[[bin]]
+name = "consumer"
+path = "src/consumer.rs"
+
+[dependencies]
+zeroshm = { path = "../../rust/zeroshm" }
+

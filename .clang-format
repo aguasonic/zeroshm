@@ -1,0 +1,21 @@
+BasedOnStyle: LLVM
+IndentWidth: 3
+TabWidth: 3
+UseTab: Never
+
+# 1TBS Brace Placement:
+# Opening braces stay on the same line for functions, classes, and control statements.
+BreakBeforeBraces: Attach
+
+# Classic C / 1TBS conventions
+PointerAlignment: Right
+SpaceAfterCStyleCast: false
+SpaceBeforeParens: ControlStatements
+SpacesBeforeTrailingComments: 3
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+ColumnLimit: 80
+Standard: c++23
+
+

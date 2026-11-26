@@ -1,0 +1,10 @@
+[package]
+name = "zeroshm-cli"
+version = "1.0.0"
+edition = "2021"
+description = "ZeroSHM command-line interface tool"
+
+[dependencies]
+zeroshm = { path = "../zeroshm" }
+clap = { version = "4.0", features = ["derive"] }
+

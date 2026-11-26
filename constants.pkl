@@ -1,0 +1,130 @@
+// ZeroSHM shared constants - single source of truth for all language implementations.
+// These values define the binary format contract that C++, Go, and Rust must agree on.
+// Run `make generate` to regenerate language-specific files from this file.
+
+// Magic number identifying a ZeroSHM table header ('ZSHM')
+magic = 0x5A53484D
+
+// Current table format version
+version = 3
+
+// Seed value for xxhash3-64 name hashing (must be identical across all languages)
+xxHashSeed = 0x2FE7
+
+// Size of the table header in bytes
+headerSize = 32
+
+// Size of each table entry in bytes (hash(8) + name(256) + offset(8) + size(8) + padding)
+entrySize = 384
+
+// Section alignment (8-byte boundaries for all structure sections)
+sectionAlign = 8
+
+// Name field size in table entries (includes null terminator + padding)
+nameFieldSize = 256
+
+// Primitive type sizes
+u32Size = 4
+u64Size = 8
+
+// Table header field offsets
+tableMagicOffset = 0
+tableVersionOffset = 4
+tableEntryCountOffset = 8
+tableMaxEntriesOffset = 12
+tableMemorySizeOffset = 16
+tableNextOffsetOffset = 24
+
+// Queue header field offsets (16 bytes total)
+queueHeadOffset = 0
+queueTailOffset = 4
+queueCapacityOffset = 8
+queueElemSizeOffset = 12
+
+// Ring header field offsets (24 bytes total)
+ringWritePosOffset = 0
+ringReadPosOffset = 8
+ringCapacityOffset = 16
+ringElemSizeOffset = 20
+
+// Stack header field offsets (16 bytes total)
+stackTopOffset = 0
+stackCapacityOffset = 4
+stackElemSizeOffset = 8
+stackReservedOffset = 12
+
+// Map header field offsets (16 bytes total)
+mapSizeOffset = 0
+mapCapacityOffset = 4
+mapKeySizeOffset = 8
+mapValueSizeOffset = 12
+
+// Set header field offsets (16 bytes total)
+setSizeOffset = 0
+setCapacityOffset = 4
+setElemSizeOffset = 8
+setReservedOffset = 12
+
+// Pool header field offsets (24 bytes total)
+poolFreeHeadOffset = 0
+poolAllocatedOffset = 8
+poolPaddingOffset = 12
+poolCapacityOffset = 16
+poolElemSizeOffset = 20
+
+// Barrier header field offsets (16 bytes total)
+barrierArrivedOffset = 0
+barrierGenerationOffset = 4
+barrierNumParticipantsOffset = 8
+barrierPaddingOffset = 12
+
+// Semaphore header field offsets (16 bytes total)
+semaphoreCountOffset = 0
+semaphoreWaitingOffset = 4
+semaphoreMaxCountOffset = 8
+semaphorePaddingOffset = 12
+
+// Latch header field offsets (16 bytes total)
+latchCountOffset = 0
+latchInitialCountOffset = 4
+latchPadding0Offset = 8
+latchPadding1Offset = 12
+
+// Event state field offsets (12 bytes total)
+eventSignaledOffset = 0
+eventModeOffset = 4
+eventWaitingOffset = 8
+
+// Once flag field offsets (4 bytes total)
+onceStateOffset = 0
+
+// RWLock state field offsets (8 bytes total)
+rwlockReadersOffset = 0
+rwlockWriterActiveOffset = 4
+
+// Channel header field offsets (32 bytes total)
+channelCapacityOffset = 0
+channelSendersOffset = 4
+channelReceiversOffset = 8
+channelClosedOffset = 12
+channelSendSeqOffset = 16
+channelRecvSeqOffset = 24
+
+// Stream header field offsets (56 bytes total)
+streamSequenceOffset = 0
+streamSubscribersOffset = 8
+streamClosedOffset = 12
+streamBufferCapacityOffset = 16
+streamPaddingOffset = 20
+streamTransformNameOffset = 24
+
+// Future header field offsets (fixed portion, 16 bytes)
+futureStateOffset = 0
+futureWaitersOffset = 4
+futureCompletionTimeOffset = 8
+
+// Lazy header field offsets (fixed portion, 16 bytes)
+lazyStateOffset = 0
+lazyComputeCountOffset = 4
+lazyCompletionTimeOffset = 8
+

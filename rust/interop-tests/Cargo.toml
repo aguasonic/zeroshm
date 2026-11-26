@@ -1,0 +1,17 @@
+[package]
+name = "interop-tests"
+version = "1.0.0"
+edition = "2021"
+description = "Cross-language interop tests for ZeroSHM"
+
+[dependencies]
+zeroshm = { path = "../zeroshm" }
+
+[[bin]]
+name = "create_structures"
+path = "src/create_structures.rs"
+
+[[bin]]
+name = "interop"
+path = "src/main.rs"
+
